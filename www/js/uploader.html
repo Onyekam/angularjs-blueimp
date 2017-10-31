@@ -15,9 +15,16 @@
                 <span class="btn btn-success success fileinput-button" ng-class="{disabled: disabled}">
                 <i class="glyphicon glyphicon-plus"></i>
                 <span>Add files to upload</span>
+
                 <input type="file" name="files[]" multiple ng-disabled="disabled">
                 </span>
                 <br><br>
+
+                <div id="videoembed"></div>
+                <!--
+                <script src="https://fast.wistia.com/embed/medias/smxvgocvc3.jsonp" async></script>
+                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><span class="wistia_embed wistia_async_smxvgocvc3 popover=true popoverAnimateThumbnail=true" style="display:inline-block;height:84px;width:150px">&nbsp;</span>-->
+                <div class="wistia_embed" style="height: 100%; width: 100%;" ng-bind-html="$ctrl.videoPreviewHtml"></div>
                 <!-- The global file processing state -->
                 <span class="fileupload-process"></span>
             </div>
@@ -38,7 +45,7 @@
                     <div class="preview" data-ng-switch-when="true">
                         <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
                     </div>
-                    <div class="preview" data-ng-switch-default data-file-upload-preview="file"></div>
+                    <!-- <div class="preview" data-ng-switch-default data-file-upload-preview="file"></div> -->
                 </td>
                 <td>
                     <p class="name" data-ng-switch data-on="!!file.url">
@@ -75,7 +82,7 @@
     </form>
 </div>
 <!-- The blueimp Gallery widget -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+<!--<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
     <div class="slides"></div>
     <h3 class="title"></h3>
     <a class="prev">‹</a>
@@ -83,4 +90,4 @@
     <a class="close">×</a>
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
-</div>
+</div>-->
